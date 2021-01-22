@@ -28,7 +28,6 @@ services:
       - 4000:4000
     depends_on:
       - db
-      - webpacker
 
   webpacker:
     build: .
@@ -41,3 +40,5 @@ services:
       - .:/usr/src/app
     ports:
       - 3035:3035
+    depends_on:
+      - app

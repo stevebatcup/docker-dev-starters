@@ -17,7 +17,7 @@ rails new my_app_name --webpack -d postgresql --skip-test --skip-bundle --skip-w
 exit
 ```
 
-4. Copy all the files in this project into your newly created Rails project
+4. Copy all the files from the lib folder in this project into your newly created Rails project
 
 5. Add the following lines to your .gitignore
 
@@ -35,15 +35,27 @@ docker-webpacker-entrypoint.sh
 7. Make the entrypoint files executable
 
 ```sh
-chmod +x docker-rails-entrypoint.sh docker-webpacker-entrypoint.sh
+chmod +x docker-rails-entrypoint.sh
+chmod +x docker-webpacker-entrypoint.sh
 ```
 
-8. Build and run the project
+8. Build and run the app and db containers and wait for app to be available at http://localhost:4000
 
 ```sh
 docker-compose up -d --build app
 ```
 
-9. Wait for all 3 containers to start (app, db and webpacker)
+9. Setup the databases
 
-10. App should now be available at http://localhost:4000
+```sh
+docker-compose exec app rails db:create
+docker-compose exec app rails db:migrate
+```
+
+10. Build and run the webpacker container
+
+```sh
+docker-compose up -d --build webpacker
+```
+
+11. All ready
