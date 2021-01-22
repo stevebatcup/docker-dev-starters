@@ -17,7 +17,7 @@ rails new my_app_name -d postgresql --skip-test --skip-bundle --skip-webpack-ins
 exit
 ```
 
-4. Copy the all files this project including the .env into your newly created Rails project
+4. Copy all the files in this project into your newly created Rails project
 
 5. Add the following lines to your .gitignore
 
