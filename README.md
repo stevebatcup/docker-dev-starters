@@ -13,7 +13,7 @@ docker run --rm -it -v "$PWD:/app" ruby:2.7.2 bash
 ```sh
 gem install rails
 cd app
-rails new my_app_name -d postgresql --skip-test --skip-bundle --skip-webpack-install
+rails new my_app_name --webpack -d postgresql --skip-test --skip-bundle --skip-webpack-install
 exit
 ```
 
