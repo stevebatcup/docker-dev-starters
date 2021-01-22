@@ -7,7 +7,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   default-mysql-client default-libmysqlclient-dev vim nodejs yarn \
   && rm -rf /var/lib/apt/lists
 
-ENV RAILS_ENV development
 ENV APP_PATH /usr/src/app
 ENV PATH $APP_PATH/bin:$PATH
 ENV BUNDLE_PATH /usr/src/gems
