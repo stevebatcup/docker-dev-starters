@@ -32,7 +32,7 @@ services:
 
   webpacker:
     build: .
-    entrypoint: docker-webpacker-entrypoint.sh
+    entrypoint: ./docker-webpacker-entrypoint.sh
     env_file: .env
     environment:
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
