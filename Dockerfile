@@ -25,4 +25,4 @@ ADD . $APP_PATH
 # USER appuser
 
 EXPOSE 4000
-CMD ./docker-entrypoint.sh
+EXPOSE 3035

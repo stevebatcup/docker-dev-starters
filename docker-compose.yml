@@ -17,7 +17,10 @@ services:
 
   app:
     build: .
+    entrypoint: ./docker-rails-entrypoint.sh
     env_file: .env
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=webpacker
     volumes:
       - gems:/usr/src/gems
       - .:/usr/src/app
@@ -25,3 +28,16 @@ services:
       - 4000:4000
     depends_on:
       - db
+      - webpacker
+
+  webpacker:
+    build: .
+    entrypoint: docker-webpacker-entrypoint.sh
+    env_file: .env
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    volumes:
+      - gems:/usr/src/gems
+      - .:/usr/src/app
+    ports:
+      - 3035:3035
