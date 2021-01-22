@@ -2,13 +2,13 @@
 
 ## Setup
 
-1. From your main code directory run
+1. From your main code directory run the following, replacing your required ruby version
 
 ```sh
 docker run --rm -it -v "$PWD:/app" ruby:2.7.2 bash
 ```
 
-2. From inside this container run, replacing _my_app_name_ with the name of your app
+2. From inside this container run the following, replacing _my_app_name_ with the name of your app
 
 ```sh
 gem install rails
