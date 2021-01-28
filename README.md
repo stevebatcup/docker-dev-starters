@@ -1,4 +1,6 @@
-# Starter files for a Rails 6 dev environment using Docker & Docker Compose
+## Docker Rails Starters
+
+These are starter files for a Rails 6 dev environment using Docker & Docker Compose
 
 ## Setup
 
