@@ -45,11 +45,10 @@ Build and run the app and db containers and wait for app to be available at http
 docker-compose up -d --build app
 ```
 
-Setup the databases
+Edit your `config/database.yml` and run the rails task to create the databases
 
 ```sh
-docker-compose exec app rails db:setup
-# docker-compose exec app rails db:migrate
+docker-compose exec app rails db:create
 ```
 
 ## Webpacker
