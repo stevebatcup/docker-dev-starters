@@ -21,9 +21,9 @@ rails new my_app_name -d postgresql --skip-test --skip-bundle --skip-webpack-ins
 exit
 ```
 
-Copy all the files from the lib folder in this project into your newly created project
+Note how we skip 'bundle install'. This will be run later when building our app container.
 
-Add the following lines to your .gitignore
+Now copy all the files from the lib folder in this project into your newly created project and add the following lines to your .gitignore
 
 ```
 # local docker setup
