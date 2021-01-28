@@ -17,7 +17,7 @@ rails new my_app_name -d postgresql --skip-test --skip-bundle --skip-webpack-ins
 exit
 ```
 
-Copy all the files from the lib folder in this project into your newly created Rails project
+Copy all the files from the lib folder in this project into your newly created project
 
 Add the following lines to your .gitignore
 
@@ -30,7 +30,7 @@ docker-rails-entrypoint.sh
 docker-webpacker-entrypoint.sh
 ```
 
-Edit the project name in the .env file to the name of your app
+Edit the _COMPOSE_PROJECT_NAME_ and _APP_NAME_ entries in the .env file to the name of your new app
 
 Make the rails entrypoint file executable
 
