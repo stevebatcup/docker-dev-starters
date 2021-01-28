@@ -54,17 +54,17 @@ Edit your `config/database.yml` and run the rails task to create the databases
 docker-compose exec app rails db:create
 ```
 
-You app should now be available at http://localhost:4000
+You app will now be available at http://localhost:4000
 
 ## Webpacker (optional)
 
-Install webpacker
+Install webpacker on the running app container
 
 ```sh
 docker-compose exec app rails webpacker:install
 ```
 
-Copy the webpacker entrypoint file from this project and make it executable
+Copy the webpacker entrypoint file from this project into yours and make it executable
 
 ```sh
 chmod +x docker-webpacker-entrypoint.sh
@@ -81,3 +81,5 @@ Run the webpack-dev-server container
 ```sh
 docker-compose up -d --build webpacker
 ```
+
+Your app will now use the webpack-dev-server
