@@ -27,10 +27,14 @@ Add the following lines to your .gitignore
 Dockerfile
 docker-compose.yml
 docker-rails-entrypoint.sh
-docker-webpacker-entrypoint.sh
 ```
 
-Edit the _COMPOSE_PROJECT_NAME_ and _APP_NAME_ entries in the .env file to the name of your new app
+Edit the COMPOSE_PROJECT_NAME and APP_NAME entries in the .env file to the name of your new app
+
+```sh
+COMPOSE_PROJECT_NAME=my_app_name
+APP_NAME=my_app_name
+```
 
 Make the rails entrypoint file executable
 
@@ -58,13 +62,19 @@ Install webpacker
 docker-compose exec app rails webpacker:install
 ```
 
-Copy the webpacker entrypoint file from this project and make it executable with
+Copy the webpacker entrypoint file from this project and make it executable
 
 ```sh
 chmod +x docker-webpacker-entrypoint.sh
 ```
 
-And now you can run the webpack-dev-server container
+Add the following line to your .gitinore
+
+```sh
+docker-webpacker-entrypoint.sh
+```
+
+Run the webpack-dev-server container
 
 ```sh
 docker-compose up -d --build webpacker
