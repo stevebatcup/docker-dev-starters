@@ -32,11 +32,10 @@ docker-webpacker-entrypoint.sh
 
 Edit the project name in the .env file to the name of your app
 
-If necessary, make the entrypoint files executable
+Make the rails entrypoint file executable
 
 ```sh
 chmod +x docker-rails-entrypoint.sh
-chmod +x docker-webpacker-entrypoint.sh
 ```
 
 Build and run the app and db containers and wait for app to be available at http://localhost:4000
@@ -51,18 +50,22 @@ Edit your `config/database.yml` and run the rails task to create the databases
 docker-compose exec app rails db:create
 ```
 
-## Webpacker
+## Webpacker (optional)
 
-If required, install webpacker
+Install webpacker
 
 ```sh
 docker-compose exec app rails webpacker:install
 ```
 
+Copy the webpacker entrypoint file from this project and make it executable with
+
+```sh
+chmod +x docker-webpacker-entrypoint.sh
+```
+
 And now you can run the webpack-dev-server container
 
 ```sh
-docker-compose up -d webpacker
+docker-compose up -d --build webpacker
 ```
-
-11. All ready
