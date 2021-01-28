@@ -42,7 +42,7 @@ Make the rails entrypoint file executable
 chmod +x docker-rails-entrypoint.sh
 ```
 
-Build and run the app and db containers and wait for app to be available at http://localhost:4000
+Build and run the app and db containers
 
 ```sh
 docker-compose up -d --build app
@@ -53,6 +53,8 @@ Edit your `config/database.yml` and run the rails task to create the databases
 ```sh
 docker-compose exec app rails db:create
 ```
+
+You app should now be available at http://localhost:4000
 
 ## Webpacker (optional)
 
