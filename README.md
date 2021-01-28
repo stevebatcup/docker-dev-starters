@@ -10,6 +10,8 @@ From your main code directory run the following, replacing your required ruby ve
 docker run --rm -it -v "$PWD:/app" ruby:2.7.2 bash
 ```
 
+This will boot up a ruby container ready for you to generate a new rails project
+
 From inside this container run the following, replacing _my_app_name_ with the name of your app
 
 ```sh
