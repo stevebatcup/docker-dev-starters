@@ -2,7 +2,7 @@
 
 These are starter files for a Rails 6 dev environment using Docker & Docker Compose
 
-## Setup
+### Setup
 
 From your main code directory run the following, replacing your required ruby version
 
@@ -60,7 +60,7 @@ docker-compose exec app rails db:create
 
 You app will now be available at http://localhost:4000
 
-## Webpacker (optional)
+### Webpacker (optional)
 
 Install webpacker on the running app container
 
@@ -88,7 +88,9 @@ docker-compose up -d --build webpacker
 
 Your app will now use the webpack-dev-server
 
-To use hot reloading on your rails views open your config/webpacker.yml and change the hmr setting to true under the dev_server block
+### Hot reload your views over webpack
+
+To use hot reloading for edits to your rails views open your config/webpacker.yml and change the hmr setting to true under the dev_server block
 
 ```yml
   dev_server:
@@ -96,19 +98,13 @@ To use hot reloading on your rails views open your config/webpacker.yml and chan
     hmr: true
 ```
 
-### Hot reload your views over webpack
-
 Add the following to your config/webpack/development.js above the module.exports line
 
 ```js
 const chokidar = require("chokidar");
 environment.config.devServer.before = (app, server) => {
   chokidar
-    .watch([
-      "config/locales/**/*.yml",
-      "app/views/**/*.html.erb",
-      "app/assets/**/*.scss",
-    ])
+    .watch(["config/locales/**/*.yml", "app/views/**/*.html.erb"])
     .on("change", () => server.sockWrite(server.sockets, "content-changed"));
 };
 ```
