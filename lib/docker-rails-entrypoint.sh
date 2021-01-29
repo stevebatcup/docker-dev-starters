@@ -3,10 +3,6 @@
 echo "Bundling..."
 bundle check || bundle install
 
-echo "Installing webpacker..."
-bundle exec rails webpacker:install
-# bundle exec rails webpacker:install:typescript
-
 if [[ -a /usr/src/app/tmp/pids/server.pid ]]; then
 	echo "Removing stale PID file from /usr/src/app/tmp/pids/server.pid...."
 	rm /usr/src/app/tmp/pids/server.pid
